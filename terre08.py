@@ -18,18 +18,18 @@ def ca_isdigit(arg: str) -> bool:
         return True
     else:
         return False
-            
-        
-def main(number: int) -> None:
-    '''Print the number's parity.'''
-    if int(number) % 2 == 0:
-        print("pair")
+    
+    
+def main(base: int, exponent: int) -> None:
+    if exponent >= 0:
+        print(base ** exponent)
     else:
-        print("impair")
-
-
+        print("erreur.")
+    
+    
 if __name__ == '__main__':
-    if (ca_len(sys.argv) == 2 and ca_isdigit(sys.argv[1])):
-        main(int(sys.argv[1]))
+    if (ca_len(sys.argv) == 3 and ca_isdigit(sys.argv[1])
+        and ca_isdigit(sys.argv[2])):
+        main(int(sys.argv[1]), int(sys.argv[2]))
     else:
-        print("This program needs only one whole number to function")
+        print("This program needs two whole numbers to operate")
